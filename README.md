@@ -1,16 +1,20 @@
-# Atomeocean 开源仓库模板
+# atomeocean-open-source-cn-mapstruct
 
-这个仓库的用途是搭建其他开源项目时，以这个仓库为模板，实现快速初始化
+<p align="center">
+English | <a href="README_zh.md">简体中文 </a>
+</p>
 
-## 初始化内容
+Welcome to the official GitHub repository for the Chinese translation of the MapStruct API documentation. MapStruct is an efficient Java annotation processor that automates the mapping of data between objects. This repository aims to help Chinese-speaking developers better understand and utilize this tool by providing comprehensive Chinese translations of its API documentation.
 
-- vitepress
-- gitignore文件
-- github开源项目文件 (default community health files)
-  - license
-  - code of conduct
-  - etc
+## Features
 
-## 运行方式
+- Up-to-date Chinese translations of the MapStruct API documentation.
+- Includes examples and best practices.
+- Clear pathways for feedback and contributions, encouraging community involvement.
 
-根据vitepress默认指令运行
+
+## More Information
+
+For more information about MapStruct, please visit the [official website](https://mapstruct.org/).
+
+Thank you for your support and participation!
