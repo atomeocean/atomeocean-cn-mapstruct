@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Atomeocean open source template"
-  text: "atomeocean开源项目仓库模板"
+  name: "Atomeocean Mapstruct"
+  text: "atomeocean开源Mapstruct中文文档"
   tagline: My great project tagline
   actions:
     - theme: brand
@@ -16,10 +16,10 @@ hero:
 
 features:
   - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: https://atomeocean.com
   - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: https://atomeocean.com
   - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    details: https://atomeocean.com
 ---
 
