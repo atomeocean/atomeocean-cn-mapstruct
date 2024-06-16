@@ -8,7 +8,7 @@ export default withMermaid(
       // https://vitepress.dev/guide/deploy#setting-a-public-base-path
       base: '/atomeocean-cn-mapstruct/',
       title: 'Atomeocean open source mapstruct',
-      description: 'mapsture 开源文档',
+      description: 'Mapstruct 开源文档',
       themeConfig: {
         logo: '/favicon.ico',
         siteTitle: false,
