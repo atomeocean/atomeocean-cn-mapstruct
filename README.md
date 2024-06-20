@@ -1,4 +1,4 @@
-# atomeocean-open-source-cn-mapstruct
+# atomeocean mapstruct documentation
 
 <p align="center">
 English | <a href="README_zh.md">简体中文 </a>
@@ -6,11 +6,9 @@ English | <a href="README_zh.md">简体中文 </a>
 
 Welcome to the official GitHub repository for the Chinese translation of the MapStruct API documentation. MapStruct is an efficient Java annotation processor that automates the mapping of data between objects. This repository aims to help Chinese-speaking developers better understand and utilize this tool by providing comprehensive Chinese translations of its API documentation.
 
-## Features
+## Goals
 
 - Up-to-date Chinese translations of the MapStruct API documentation.
-- Includes examples and best practices.
-- Clear pathways for feedback and contributions, encouraging community involvement.
 
 
 ## More Information
