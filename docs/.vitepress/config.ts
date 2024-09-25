@@ -9,7 +9,15 @@ export default withMermaid(
       base: '/atomeocean-cn-mapstruct/',
       title: 'Atomeocean open source mapstruct',
       description: 'Mapstruct 开源文档',
-      themeConfig: {
+      head: [
+      // 添加谷歌广告 https://juejin.cn/post/7363078360786370599
+      ['script', {
+        async: 'async',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
+        crossorigin: 'anonymous',
+      }]
+    ],
+        themeConfig: {
         logo: '/favicon.ico',
         siteTitle: false,
         search: {
