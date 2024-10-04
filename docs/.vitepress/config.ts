@@ -57,7 +57,8 @@ export default withMermaid(
         }),
         socialLinks: [
           {icon: 'github', link: 'https://github.com/atomeocean'},
-          {icon: 'youtube', link: 'https://www.youtube.com/@atomeocean'}
+          {icon: 'youtube', link: 'https://www.youtube.com/@atomeocean'},
+          {icon: 'linkedin', link: 'https://www.linkedin.com/company/atomeocean'},
         ],
       },
       mermaid: {
