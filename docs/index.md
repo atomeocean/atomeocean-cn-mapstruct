@@ -50,6 +50,15 @@ const members = [
       { icon: 'github', link: 'https://github.com/bojianwangny' },
     ]
   },
+  {
+    avatar: 'https://www.github.com/orochileo.png',
+    name: 'Leo',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/orochileo' },
+    ]
+  },
+
 ]
 </script>
 
