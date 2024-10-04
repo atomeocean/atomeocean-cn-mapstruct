@@ -10,14 +10,14 @@ export default withMermaid(
       title: 'Atomeocean open source mapstruct',
       description: 'Mapstruct 开源文档',
       head: [
-      // 添加谷歌广告 https://juejin.cn/post/7363078360786370599
-      ['script', {
-        async: 'async',
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
-        crossorigin: 'anonymous',
-      }]
-    ],
-        themeConfig: {
+        // 添加谷歌广告 https://juejin.cn/post/7363078360786370599
+        ['script', {
+          async: 'async',
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
+          crossorigin: 'anonymous',
+        }]
+      ],
+      themeConfig: {
         logo: '/favicon.ico',
         siteTitle: false,
         search: {
@@ -27,11 +27,24 @@ export default withMermaid(
           {
             text: 'Websites',
             items: [
-              { text: 'Atomeocean', link: 'https://atomeocean.com' },
-              { text: 'Cruise', link: 'https://cruise.atomeocean.com'}
+              {text: 'Atomeocean', link: 'https://atomeocean.com'},
+              {text: 'Cruise', link: 'https://cruise.atomeocean.com'}
             ]
           },
         ],
+
+        lastUpdated: {
+          text: 'Updated at',
+          formatOptions: {
+            dateStyle: 'full',
+            timeStyle: 'medium'
+          }
+        },
+
+        footer: {
+          message: 'Atomeocean Open Source Mapstruct',
+          copyright: 'Copyright © 2021-present Atomeocean'
+        },
 
         // https://github.com/jooy2/vitepress-sidebar
         sidebar: generateSidebar({
@@ -43,11 +56,11 @@ export default withMermaid(
           // useTitleFromFileHeading: true,
         }),
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/atomeocean' },
-          { icon: 'youtube', link: 'https://www.youtube.com/@atomeocean' }
+          {icon: 'github', link: 'https://github.com/atomeocean'},
+          {icon: 'youtube', link: 'https://www.youtube.com/@atomeocean'}
         ],
       },
-      mermaid:{
+      mermaid: {
         //mermaidConfig !theme here works for light mode since dark theme is forced in dark mode
       },
       ignoreDeadLinks: true
