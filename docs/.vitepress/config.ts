@@ -6,7 +6,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 export default withMermaid(
     defineConfig({
       // https://vitepress.dev/guide/deploy#setting-a-public-base-path
-      base: '/atomeocean-cn-mapstruct/',
+      base: '/',
       title: 'Atomeocean open source mapstruct',
       description: 'Mapstruct 开源文档',
       head: [
