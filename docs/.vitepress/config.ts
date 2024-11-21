@@ -35,11 +35,12 @@ const vitePressSidebarOptions = [
 
 const vitePressI18nOptions : VitePressI18nOptions = {
   locales: supportLocales, // support locales
-  debugPrint: true,
+  rootLocale: defaultLocale, // default locale
   label: {
     default: '中文',
     en: 'English',
-  }
+  },
+  searchProvider: 'local',
 };
 
 // 参考 https://vitepress.dev/reference/site-config
@@ -56,6 +57,9 @@ const vitePressConfig: UserConfig = {
       crossorigin: 'anonymous',
     }]
   ],
+  rewrites: {
+    'zhHans/:rest*': ':rest*'
+  },
   themeConfig: {
     logo: '/favicon.ico',
     siteTitle: false,
