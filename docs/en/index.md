@@ -4,15 +4,15 @@ layout: home
 
 hero:
   name: "Open Source"
-  text: "Mapstruct中文文档"
-  tagline: atomeocean开源项目系列
+  text: "Mapstruct CN Docs"
+  tagline: atomeocean open source project series
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 中文文档
+      link: /zhHans/mapstruct-introduction
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: English Docs
+      link: /en/mapstruct-introduction
 
 features:
   - title: Feature A
