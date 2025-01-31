@@ -1,4 +1,11 @@
+---
+title: MapStruct 介绍
+---
 # 介绍
+
+  <Watermark>
+    <p>Atome Ocean Open Source</p>
+  </Watermark>
 MapStruct 是一个用于生成类型安全的 bean 映射类的 Java 注解处理器。
 
 你只需定义一个映射器接口，在该接口中声明所有需要的映射方法。在编译期间，MapStruct 将生成该接口的实现。这个实现使用普通的 Java 方法调用来进行源对象和目标对象之间的映射，即不使用反射或类似技术。
