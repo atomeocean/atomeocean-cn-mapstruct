@@ -62,8 +62,11 @@ const members = [
 ]
 </script>
 
+
 ## Contributors in Atomeocean
 
 Say hello to our awesome team.
 
 <VPTeamMembers size="medium" :members="members" />
+
+

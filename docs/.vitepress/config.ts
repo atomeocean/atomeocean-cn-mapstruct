@@ -92,7 +92,7 @@ const vitePressConfig: UserConfig = {
     // https://github.com/jooy2/vitepress-sidebar
     sidebar: generateSidebar(vitePressSidebarOptions),
     socialLinks: [
-      {icon: 'github', link: 'https://github.com/atomeocean'},
+      {icon: 'github', link: 'https://github.com/atomeocean/atomeocean-cn-mapstruct'},
       {icon: 'youtube', link: 'https://www.youtube.com/@atomeocean'},
       {icon: 'linkedin', link: 'https://www.linkedin.com/company/atomeocean'},
     ],
