@@ -16,7 +16,12 @@ watch(() => {
 </script>
 
 <template>
-  <el-watermark :font="font">
+  <!--设置水印内容-->
+  <el-watermark
+      :font="font"
+      :content="['Atomeocean', 'Open Source']"
+      :z-index="9"
+  >
     <slot></slot>
   </el-watermark>
 </template>
