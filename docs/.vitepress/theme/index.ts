@@ -3,12 +3,14 @@ import Watermark from "./components/Watermark.vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import AuthGuard from "./components/AuthGuard.vue";
 
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     // 注册全局组件
     app.component("Watermark", Watermark);
+    app.component("AuthGuard", AuthGuard);
 
     // 注册 ElementPlus
     app.use(ElementPlus);
