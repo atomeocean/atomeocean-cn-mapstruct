@@ -1,5 +1,11 @@
 # Introduction
 
+<PasswordReveal correctPassword='123456' hint="输入密码以查看隐藏内容">
+
+test contents
+
+</PasswordReveal>
+
 MapStruct is a Java annotation processor for the generation of type-safe bean mapping classes.
 
 All you have to do is to define a mapper interface which declares any required mapping methods. During compilation, MapStruct will generate an implementation of this interface. This implementation uses plain Java method invocations for mapping between source and target objects, i.e. no reflection or similar.
