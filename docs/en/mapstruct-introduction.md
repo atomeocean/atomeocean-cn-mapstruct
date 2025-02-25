@@ -1,6 +1,6 @@
 # Introduction
 
-<PasswordReveal correctPassword='atomeoceanNY2025H1b' hint="输入密码以查看隐藏内容">
+<PasswordReveal correctPassword='123456' hint="输入密码以查看隐藏内容">
 
 test contents
 
