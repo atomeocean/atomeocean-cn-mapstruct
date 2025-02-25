@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { useData } from "vitepress";
 import { ElForm, ElFormItem, ElInput, ElButton, ElMessage } from "element-plus";
-import { defaultPassword, atomeoceanStaffPasswords } from "../constants/passwords.ts";
+import { defaultPassword } from "../constants/passwords.ts";
 
 // 通过 props 接收密码和信息
 const props = defineProps({
