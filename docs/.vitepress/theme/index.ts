@@ -5,6 +5,7 @@ import "element-plus/dist/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import AuthGuard from "./components/AuthGuard.vue";
 import PasswordReveal from "./components/PasswordReveal.vue";
+import YoutubeEmbedCard from "./components/YoutubeEmbedCard.vue";
 
 export default {
   ...DefaultTheme,
@@ -13,6 +14,7 @@ export default {
     app.component("Watermark", Watermark);
     app.component("AuthGuard", AuthGuard);
     app.component("PasswordReveal", PasswordReveal);
+    app.component("YoutubeEmbedCard", YoutubeEmbedCard);
 
     // 注册 ElementPlus
     app.use(ElementPlus);
