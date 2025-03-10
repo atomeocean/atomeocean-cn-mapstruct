@@ -4,21 +4,21 @@ layout: home
 
 hero:
   name: "Open Source"
-  text: "Mapstruct中文文档"
+  text: "Mapstruct中文技术文档"
   tagline: atomeocean开源项目系列
   actions:
     - theme: brand
       text: 中文文档
-      link: /zhHans/mapstruct-introduction
+      link: /mapstruct-introduction
     - theme: alt
       text: English Docs
       link: /en/mapstruct-introduction
 
 features:
-  - title: Feature A
-    details: https://atomeocean.com
-  - title: Feature B
-    details: https://atomeocean.com
+  - title: Atomeocean Logbook
+    details: https://logbook.atomeocean.com
+  - title: Atomeocean Job Compass
+    details: https://jobcompass.atomeocean.com
 ---
 
 <script setup>
