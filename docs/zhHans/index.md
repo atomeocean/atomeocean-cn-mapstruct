@@ -8,8 +8,8 @@ hero:
   tagline: atomeocean开源项目系列
   actions:
     - theme: brand
-      text: 中文文档
-      link: /mapstruct-introduction
+      text: 快速开始
+      link: /get-started/map-struct-in-2-minutes
     - theme: alt
       text: English Docs
       link: /en/mapstruct-introduction
