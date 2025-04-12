@@ -23,8 +23,9 @@ jobs:
             
             if (prDescriptionSection) {
               const content = prDescriptionSection[1].trim();
-              // 检查内容是否为空或只有注释
-              if (!content || content === '<!-- 请清晰描述本次 PR 的具体内容及目的。 -->') {
+              // 检查内容是否为空、只有注释或缺乏有意义的文本
+              const isPlaceholder = /^<!--.*?-->$/.test(content) || content.length < 10;
+              if (!content || isPlaceholder) {
                 await github.rest.issues.createComment({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
