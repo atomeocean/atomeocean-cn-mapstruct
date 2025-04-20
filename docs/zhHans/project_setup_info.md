@@ -1,3 +1,7 @@
+---
+title: MapStruct 是什么？
+outline: deep
+---
 ### MapStruct 是什么？
 
 **MapStruct** 是一个用于 Java bean 类的类型安全和高效映射器生成的 Java 注解处理器。它可以避免你手动编写映射代码，这是一项繁琐且容易出错的任务。生成器提供了合理的默认值和许多内置的类型转换，但当涉及到配置或实现特殊行为时，它不会妨碍你。
@@ -37,7 +41,11 @@ MapStruct 可以在命令行构建（如纯 `javac`、通过 Maven、Gradle、An
 
 对于 Eclipse，专用插件正在开发中（参见 [MapStruct Eclipse 插件](https://github.com/mapstruct/mapstruct-eclipse)）。它超越了注解处理器的功能，提供了注解属性的内容辅助、快速修复等功能。
 
-对于 IntelliJ，插件可以在 IntelliJ 市场中获取（参见 [MapStruct IntelliJ 插件](https://plugins.jetbrains.com/plugin/10036-mapstruct-support)）。
+对于 IntelliJ，插件可以在 IntelliJ 市场中获取。
+
+参见 
+<CustomLink href="https://plugins.jetbrains.com/plugin/10036-mapstruct-support" text="MapStruct IntelliJ 插件" 
+type="primary" />
 
 ### Maven
 
@@ -136,7 +144,16 @@ MapStruct 使用 gem 注解处理器为其自己的注解生成映射 gem。因�
 - [下载](https://github.com/mapstruct/mapstruct/releases)
 - [问题追踪](https://github.com/mapstruct/mapstruct/issues)
 - [用户组](https://groups.google.com/forum/#!forum/mapstruct-users)
-- [CI 构建](https://ci.eclipse.org/mapstruct/)
+
+<CustomLink
+  href="https://ci.eclipse.org/mapstruct/"
+  text="CI 构建"
+  type="danger"
+/>
+
+<div>
+  <CustomLink href="https://ci.eclipse.org/mapstruct/" text="CI 构建" />
+</div>
 
 ### 许可
 

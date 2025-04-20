@@ -8,7 +8,7 @@ import PasswordReveal from "./components/PasswordReveal.vue";
 import YoutubeEmbedCard from "./components/YoutubeEmbedCard.vue";
 import ContactAtomeoceanAffix from "./components/ContactAtomeoceanAffix.vue";
 import LicenseNotice from "./components/LicenseNotice.vue";
-import Link from "./components/Link.vue"
+import CustomLink from "./components/CustomLink.vue"
 
 export default {
   ...DefaultTheme,
@@ -20,7 +20,7 @@ export default {
     app.component("YoutubeEmbedCard", YoutubeEmbedCard);
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
     app.component("LicenseNotice", LicenseNotice);
-    app.component("Link", Link);
+    app.component("CustomLink", CustomLink);
 
     // 注册 ElementPlus
     app.use(ElementPlus);
