@@ -21,6 +21,10 @@ features:
     details: https://jobcompass.atomeocean.com
 ---
 
+<div>
+  <CustomLink href="https://ci.eclipse.org/mapstruct/" text="CI 构建" type="danger" />
+</div>
+
 <script setup>
 
 import { VPTeamMembers } from 'vitepress/theme';
