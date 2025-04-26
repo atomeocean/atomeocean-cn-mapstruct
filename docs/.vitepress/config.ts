@@ -53,7 +53,8 @@ const vitePressConfig: UserConfig = {
     // 添加谷歌广告 https://juejin.cn/post/7363078360786370599
     ['script', {
       async: 'async',
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
+      // src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', // 只加载广告脚本，不启用Auto ads
       crossorigin: 'anonymous',
     }]
   ],

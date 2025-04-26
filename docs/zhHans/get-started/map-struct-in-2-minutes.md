@@ -1,5 +1,13 @@
 # 快速入门MapStruct (2分钟)
 
+<ClientOnly>
+  <GoogleAd
+    adClient="ca-pub-5598390904013681"
+    adSlot="9876543210"
+    style="display:block;min-height:90px;margin:24px auto;"
+  />
+</ClientOnly>
+
 :::code-group
 
 ```java [Car.java]
