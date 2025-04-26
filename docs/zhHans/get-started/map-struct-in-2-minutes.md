@@ -3,7 +3,7 @@
 <ClientOnly>
   <GoogleAd
     adClient="ca-pub-5598390904013681"
-    adSlot="9876543210"
+    adSlot="2675515200"
     style="display:block;min-height:90px;margin:24px auto;"
   />
 </ClientOnly>

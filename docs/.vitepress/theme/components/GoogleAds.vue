@@ -24,7 +24,7 @@ onMounted(() => {
   // io.observe(adRef.value!)
 
   // 简单写法：直接 push
-  (window.adsbygoogle = window.adsbygoogle || []).push({})
+  (adsbygoogle = window.adsbygoogle || []).push({});
 })
 </script>
 
