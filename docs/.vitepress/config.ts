@@ -9,8 +9,6 @@ import {commonSidebarConfig} from "./config/sidebar";
 const defaultLocale: string = 'zhHans';
 const supportLocales: string[] = [defaultLocale, 'en'];
 
-
-
 const vitePressSidebarOptions = [
   ...supportLocales.map((lang) => {
     return {
