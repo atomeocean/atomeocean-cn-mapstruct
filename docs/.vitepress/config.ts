@@ -3,24 +3,11 @@ import { generateSidebar } from 'vitepress-sidebar'
 import { withMermaid } from "vitepress-plugin-mermaid";
 import { withI18n } from "vitepress-i18n";
 import {VitePressI18nOptions} from "vitepress-i18n/dist/types";
+import {commonSidebarConfig} from "./config/sidebar";
 
 // 默认语言为简体中文
 const defaultLocale: string = 'zhHans';
 const supportLocales: string[] = [defaultLocale, 'en'];
-
-/**
- * sidebar公共配置
- * [vitepress-sidebar](https://github.com/jooy2/vitepress-sidebar)
- */
-const commonSidebarConfig =  {
-  debugPrint: true,
-  collapsed: false,
-  capitalizeFirst: true,
-  useTitleFromFileHeading: true,
-  useTitleFromFrontmatter: true,
-  useFolderTitleFromIndexFile: true,
-  sortMenusByFrontmatterOrder: true,
-};
 
 const vitePressSidebarOptions = [
   ...supportLocales.map((lang) => {
