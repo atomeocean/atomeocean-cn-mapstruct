@@ -64,7 +64,6 @@ const vitePressConfig: UserConfig = {
   ignoreDeadLinks: true
 };
 
-
 export default defineConfig(
   withI18n(
     withMermaid(vitePressConfig),

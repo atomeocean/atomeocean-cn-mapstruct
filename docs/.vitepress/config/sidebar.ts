@@ -19,6 +19,7 @@ export const commonSidebarConfig =  {
 
 export function generateVitePressSidebar() {
   return generateSidebar(
+    // 生成多语言侧边栏
     supportLocales.map((lang) => ({
       ...commonSidebarConfig,
       documentRootPath: `/docs/${lang}`,
