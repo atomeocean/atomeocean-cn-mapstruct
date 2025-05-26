@@ -1,34 +1,9 @@
 import {defineConfig, UserConfig} from 'vitepress'
-import { generateSidebar } from 'vitepress-sidebar'
-import { withMermaid } from "vitepress-plugin-mermaid";
-import { withI18n } from "vitepress-i18n";
-import {VitePressI18nOptions} from "vitepress-i18n/dist/types";
-import {commonSidebarConfig} from "./config/sidebar";
+import {withMermaid} from "vitepress-plugin-mermaid";
+import {withI18n} from "vitepress-i18n";
+import {generateVitePressSidebar} from "./config/sidebar";
+import {vitePressI18nOptions} from "./config/i18n";
 
-// 默认语言为简体中文
-const defaultLocale: string = 'zhHans';
-const supportLocales: string[] = [defaultLocale, 'en'];
-
-const vitePressSidebarOptions = [
-  ...supportLocales.map((lang) => {
-    return {
-      ...commonSidebarConfig,
-      documentRootPath: `/docs/${lang}`,
-      resolvePath: defaultLocale === lang ? '/' : `/${lang}/`,
-      ...(defaultLocale === lang ? {} : { basePath: `/${lang}/` })
-    };
-  })
-];
-
-const vitePressI18nOptions : VitePressI18nOptions = {
-  locales: supportLocales, // support locales
-  rootLocale: defaultLocale, // default locale
-  label: {
-    default: '中文',
-    en: 'English',
-  },
-  searchProvider: 'local',
-};
 
 // 参考 https://vitepress.dev/reference/site-config
 const vitePressConfig: UserConfig = {
@@ -76,9 +51,7 @@ const vitePressConfig: UserConfig = {
       message: 'Atomeocean Open Source Mapstruct',
       copyright: 'Copyright © 2021-present Atomeocean'
     },
-
-    // https://github.com/jooy2/vitepress-sidebar
-    sidebar: generateSidebar(vitePressSidebarOptions),
+    sidebar: generateVitePressSidebar(),
     socialLinks: [
       {icon: 'github', link: 'https://github.com/atomeocean/atomeocean-cn-mapstruct'},
       {icon: 'youtube', link: 'https://www.youtube.com/@atomeocean'},
