@@ -1,13 +1,13 @@
 
 <template>
-  评论功能组件
+  评论区
   <div class="comments">
     <Giscus
-        repo="atomeocean/atomeocean-cn-mapstruct"
+        :repo="giscusConfig.repo"
         repoId="giscusConfig.repoId"
         category="giscusConfig.category"
         categoryId="giscusConfig.categoryId"
-        mapping="pathname"
+        :mapping="giscusConfig.mapping"
         strict=0
         reactionsEnabled=1
         emitMetadata=1
