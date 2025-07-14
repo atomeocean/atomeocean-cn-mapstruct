@@ -1,19 +1,21 @@
+
 <template>
+  评论功能组件
   <div class="comments">
     <Giscus
-        repo="giscusConfig.repo"
+        repo="atomeocean/atomeocean-cn-mapstruct"
         repoId="giscusConfig.repoId"
         category="giscusConfig.category"
         categoryId="giscusConfig.categoryId"
-        mapping="giscusConfig.mapping"
-        strict="giscusConfig.strict === '1'"
-        reactionsEnabled="giscusConfig.reactionsEnabled === '1'"
-        emitMetadata="giscusConfig.emitMetadata === '1'"
-        inputPosition="giscusConfig.inputPosition"
-        lang="giscusConfig.lang"
-        theme="giscusConfig.theme"
-        loading="giscusConfig.loading"
-        crossorigin="giscusConfig.crossorigin"
+        mapping="pathname"
+        strict=0
+        reactionsEnabled=1
+        emitMetadata=1
+        inputPosition=top
+        lang="zh-CN"
+        theme="preferred_color_scheme"
+        loading=lazy
+        crossorigin="anonymous"
     />
   </div>
 </template>
