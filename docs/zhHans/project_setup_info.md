@@ -1,3 +1,7 @@
+---
+title: MapStruct 是什么？
+outline: deep
+---
 ### MapStruct 是什么？
 
 **MapStruct** 是一个用于 Java bean 类的类型安全和高效映射器生成的 Java 注解处理器。它可以避免你手动编写映射代码，这是一项繁琐且容易出错的任务。生成器提供了合理的默认值和许多内置的类型转换，但当涉及到配置或实现特殊行为时，它不会妨碍你。
@@ -141,3 +145,6 @@ MapStruct 使用 gem 注解处理器为其自己的注解生成映射 gem。因�
 ### 许可
 
 MapStruct 采用 Apache License 2.0 许可（“许可”）。你不能在不遵守许可的情况下使用此项目。你可以在 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 页面上获取许可副本。
+
+
+<GiscusComment />
