@@ -9,6 +9,7 @@ import YoutubeEmbedCard from "./components/YoutubeEmbedCard.vue";
 import ContactAtomeoceanAffix from "./components/ContactAtomeoceanAffix.vue";
 import LicenseNotice from "./components/LicenseNotice.vue";
 import GoogleAds from "./components/GoogleAds.vue";
+import GiscusComment from "./components/GiscusComment.vue";
 
 export default {
   ...DefaultTheme,
@@ -21,6 +22,7 @@ export default {
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
     app.component("LicenseNotice", LicenseNotice);
     app.component("GoogleAds", GoogleAds);
+    app.component("GiscusComment", GiscusComment);
 
     // 注册 ElementPlus
     app.use(ElementPlus);
