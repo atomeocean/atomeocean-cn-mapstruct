@@ -50,3 +50,7 @@ public interface CarMapper {
 ## 参考
 - [MapStruct官方网站,点击get started](https://mapstruct.org/)
 - [在vitepress中使用code group](https://vitepress.dev/guide/markdown#code-groups)
+
+评论区
+
+<Comment />
