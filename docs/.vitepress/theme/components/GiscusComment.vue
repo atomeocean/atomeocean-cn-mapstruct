@@ -4,9 +4,9 @@
   <div class="comments">
     <Giscus
         :repo="giscusConfig.repo"
-        repoId="giscusConfig.repoId"
-        category="giscusConfig.category"
-        categoryId="giscusConfig.categoryId"
+        :repoId="giscusConfig.repoId"
+        :category="giscusConfig.category"
+        :categoryId="giscusConfig.categoryId"
         :mapping="giscusConfig.mapping"
         strict=0
         reactionsEnabled=1
