@@ -3,6 +3,10 @@ import {withMermaid} from "vitepress-plugin-mermaid";
 import {withI18n} from "vitepress-i18n";
 import {vitePressI18nOptions} from "./config/i18n";
 import {themeConfig} from "./config/theme";
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 
 // 参考 https://vitepress.dev/reference/site-config
@@ -27,7 +31,17 @@ const vitePressConfig: UserConfig = {
   mermaid: {
     //mermaidConfig !theme here works for light mode since dark theme is forced in dark mode
   },
-  ignoreDeadLinks: true
+  ignoreDeadLinks: true,
+  // 集成git记录插件
+  vite:{
+    plugins: [
+      GitChangelog({
+        // 填写在此处填写您的仓库链接
+        repoURL: () => 'https://github.com/atomeocean/atomeocean-cn-mapstruct',
+      }),
+      GitChangelogMarkdownSection(),
+    ],
+  },
 };
 
 export default defineConfig(

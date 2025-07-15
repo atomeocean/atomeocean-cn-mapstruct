@@ -11,6 +11,10 @@ import ContactAtomeoceanAffix from "./components/ContactAtomeoceanAffix.vue";
 import LicenseNotice from "./components/LicenseNotice.vue";
 import GoogleAds from "./components/GoogleAds.vue";
 import GiscusComment from "./components/GiscusComment.vue";
+import {
+  NolebaseGitChangelogPlugin
+} from '@nolebase/vitepress-plugin-git-changelog/client'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
 export default {
   ...DefaultTheme,
@@ -23,6 +27,7 @@ export default {
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
     app.component("LicenseNotice", LicenseNotice);
     app.component("GoogleAds", GoogleAds);
+    app.use(NolebaseGitChangelogPlugin)
 
     // 注册 ElementPlus
     app.use(ElementPlus);
