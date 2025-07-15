@@ -1,3 +1,4 @@
+import { h } from 'vue'
 import DefaultTheme from "vitepress/theme";
 import Watermark from "./components/Watermark.vue";
 import ElementPlus from "element-plus";
@@ -22,7 +23,6 @@ export default {
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
     app.component("LicenseNotice", LicenseNotice);
     app.component("GoogleAds", GoogleAds);
-    app.component("GiscusComment", GiscusComment);
 
     // 注册 ElementPlus
     app.use(ElementPlus);
@@ -30,5 +30,10 @@ export default {
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
       app.component(key, component);
     }
+  },
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'doc-footer-before': () => h(GiscusComment)
+    })
   }
 };
