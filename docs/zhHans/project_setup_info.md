@@ -147,4 +147,3 @@ MapStruct 使用 gem 注解处理器为其自己的注解生成映射 gem。因�
 MapStruct 采用 Apache License 2.0 许可（“许可”）。你不能在不遵守许可的情况下使用此项目。你可以在 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 页面上获取许可副本。
 
 
-<GiscusComment />
