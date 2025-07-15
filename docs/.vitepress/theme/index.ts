@@ -10,7 +10,6 @@ import YoutubeEmbedCard from "./components/YoutubeEmbedCard.vue";
 import ContactAtomeoceanAffix from "./components/ContactAtomeoceanAffix.vue";
 import LicenseNotice from "./components/LicenseNotice.vue";
 import GoogleAds from "./components/GoogleAds.vue";
-import GiscusComment from "./components/GiscusComment.vue";
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import { useData, useRoute } from 'vitepress';
 import { toRefs } from "vue";
@@ -39,11 +38,6 @@ export default {
       app.component(key, component);
     }
   },
-  // Layout() {
-  //   return h(DefaultTheme.Layout, null, {
-  //     'doc-footer-before': () => h(GiscusComment)
-  //   })
-  // }
   setup() {
     // Get frontmatter and route
     const { frontmatter } = toRefs(useData());
