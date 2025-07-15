@@ -1,6 +1,5 @@
 
 <template>
-  评论区
   <div class="comments">
     <Giscus
         :repo="giscusConfig.repo"
