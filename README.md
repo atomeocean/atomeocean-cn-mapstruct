@@ -16,3 +16,7 @@ Welcome to the official GitHub repository for the Chinese translation of the Map
 For more information about MapStruct, please visit the [official website](https://mapstruct.org/).
 
 Thank you for your support and participation!
+
+## Star History
+
+<img src="https://api.star-history.com/svg?repos=atomeocean/atomeocean-cn-mapstruct" />
