@@ -17,3 +17,7 @@
 ## 更多信息
 
 要了解更多关于 MapStruct 的信息，请访问[官方网站](https://mapstruct.org/)。
+
+## Star History
+
+<img src="https://api.star-history.com/svg?repos=atomeocean/atomeocean-cn-mapstruct" />
