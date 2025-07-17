@@ -17,6 +17,10 @@ For more information about MapStruct, please visit the [official website](https:
 
 Thank you for your support and participation!
 
+## Repobeats Analytics
+
+![Alt](https://repobeats.axiom.co/api/embed/ba6867b3fc2065fec61bf4668120514774f9a3dc.svg "Repobeats analytics image")
+
 ## Star History
 
 <img src="https://api.star-history.com/svg?repos=atomeocean/atomeocean-cn-mapstruct" />
