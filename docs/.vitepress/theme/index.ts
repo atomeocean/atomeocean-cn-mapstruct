@@ -17,6 +17,7 @@ import {
   NolebaseGitChangelogPlugin
 } from '@nolebase/vitepress-plugin-git-changelog/client'
 import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
+import ContributorWrapper from "./components/ContributorWrapper.vue";
 
 export default {
   ...DefaultTheme,
@@ -38,6 +39,11 @@ export default {
       app.component(key, component);
     }
   },
+    Layout: () => {
+        return h(DefaultTheme.Layout, null, {
+            'doc-before': () => h(ContributorWrapper)
+        })
+    },
   setup() {
     // Get frontmatter and route
     const { frontmatter } = toRefs(useData());
