@@ -7,6 +7,7 @@ import {
   GitChangelog,
   GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
+import {mapAuthors} from "./theme/constants/contributors";
 
 
 // 参考 https://vitepress.dev/reference/site-config
@@ -38,8 +39,15 @@ const vitePressConfig: UserConfig = {
       GitChangelog({
         // 填写在此处填写您的仓库链接
         repoURL: () => 'https://github.com/atomeocean/atomeocean-cn-mapstruct',
+        mapAuthors: mapAuthors
       }),
-      GitChangelogMarkdownSection(),
+      GitChangelogMarkdownSection({
+        sections: {
+          // 隐藏git历史修改记录和贡献者列表，只在文章上方展示贡献者列表
+          disableChangelog: true,
+          disableContributors: true,
+        },
+      }),
     ],
   },
 };
