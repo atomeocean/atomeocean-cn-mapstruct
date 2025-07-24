@@ -1,7 +1,3 @@
----
-authors:
-  - 'Bojian'
----
 
 # 快速入门MapStruct (2分钟)
 
