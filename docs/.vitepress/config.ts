@@ -8,6 +8,9 @@ import {
   GitChangelogMarkdownSection,
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 import {mapAuthors} from "./theme/constants/contributors";
+import {
+  InlineLinkPreviewElementTransform
+} from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 
 
 // 参考 https://vitepress.dev/reference/site-config
@@ -29,12 +32,28 @@ const vitePressConfig: UserConfig = {
     'zhHans/:rest*': ':rest*'
   },
   themeConfig,
+  markdown: {
+    config: (md) => {
+      md.use(InlineLinkPreviewElementTransform)
+    }
+  },
   mermaid: {
     //mermaidConfig !theme here works for light mode since dark theme is forced in dark mode
   },
   ignoreDeadLinks: true,
   // 集成git记录插件
   vite:{
+    optimizeDeps: {
+      exclude: [
+        '@nolebase/vitepress-plugin-inline-link-preview/client',
+      ],
+    },
+    ssr: {
+      noExternal: [
+        '@nolebase/ui',
+        '@nolebase/vitepress-plugin-inline-link-preview',
+      ],
+    },
     plugins: [
       GitChangelog({
         // 填写在此处填写您的仓库链接
