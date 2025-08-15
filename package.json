@@ -2,6 +2,7 @@
   "type": "module",
   "devDependencies": {
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.0",
+    "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
     "husky": "^9.1.7",
     "mermaid": "^11.8.1",
     "prettier": "^3.4.2",
