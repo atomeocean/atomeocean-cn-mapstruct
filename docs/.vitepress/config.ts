@@ -11,7 +11,7 @@ import {mapAuthors} from "./theme/constants/contributors";
 import {
   InlineLinkPreviewElementTransform
 } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
-
+import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 
 // 参考 https://vitepress.dev/reference/site-config
 const vitePressConfig: UserConfig = {
@@ -35,6 +35,11 @@ const vitePressConfig: UserConfig = {
   markdown: {
     config: (md) => {
       md.use(InlineLinkPreviewElementTransform)
+      // 添加双向链接支持
+      md.use(BiDirectionalLinks({
+        dir: 'docs',
+        baseDir: '/docs',  // 设置根目录
+      }));
     }
   },
   mermaid: {
