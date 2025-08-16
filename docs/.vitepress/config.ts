@@ -36,10 +36,7 @@ const vitePressConfig: UserConfig = {
     config: (md) => {
       md.use(InlineLinkPreviewElementTransform)
       // 添加双向链接支持
-      md.use(BiDirectionalLinks({
-        dir: 'docs',
-        baseDir: '/docs',  // 设置根目录
-      }));
+      md.use(BiDirectionalLinks());
     }
   },
   mermaid: {
