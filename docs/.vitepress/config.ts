@@ -37,8 +37,8 @@ const vitePressConfig: UserConfig = {
       md.use(InlineLinkPreviewElementTransform)
       // 添加双向链接支持
       md.use(BiDirectionalLinks({
-        dir: 'docs',
-        baseDir: '/docs',  // 设置根目录
+        dir: 'docs/zhHans',
+        baseDir: '/docs/zhHans',  // 设置根目录
       }));
     }
   },
