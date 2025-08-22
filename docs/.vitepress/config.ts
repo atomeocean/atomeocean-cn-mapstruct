@@ -26,6 +26,11 @@ const vitePressConfig: UserConfig = {
       // src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598390904013681',
       src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', // 只加载广告脚本，不启用Auto ads
       crossorigin: 'anonymous',
+    }],
+    // 集成不蒜子统计工具
+    ['script', {
+      async: 'async',
+      src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
     }]
   ],
   rewrites: {
