@@ -29,7 +29,7 @@ const vitePressConfig: UserConfig = {
     }],
     // 集成统计工具
     ['script', {
-      async: 'async',
+      defer: "defer",
       src: 'https://events.vercount.one/js'
     }]
   ],
