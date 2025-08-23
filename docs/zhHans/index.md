@@ -68,4 +68,6 @@ Say hello to our awesome team.
 
 <VPTeamMembers size="medium" :members="members" />
 
-<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+<span id="vercount_value_page_pv">Loading</span> 次
+<span id="vercount_value_site_pv">Loading</span> 次
+<span id="vercount_value_site_uv">Loading</span> 人
