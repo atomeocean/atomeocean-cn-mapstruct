@@ -1,37 +1,46 @@
-name: Add Created Date
+name: Add createdDate to new markdown files
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   add-created-date:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # 1. 拉取代码（必须是完整历史，不然 git diff 无法正确工作）
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 保证能拿到完整 git 历史
+          fetch-depth: 0   # 拉取完整 git 历史（不是浅克隆）
+          ref: ${{ github.head_ref }}   # checkout 到 PR 分支（而不是 main）
 
+      # 2. 设置 Python 环境
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.13'
 
+      # 3. 运行脚本（给新增的 .md 文件加上 createdDate）
       - name: Run script
-        run: |
-          python scripts/add_created_date_to_md.py
+        run: python scripts/add_created_date_to_md.py
 
+      # 4. 如果有修改，提交修改内容
       - name: Commit changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: add createdDate to new markdown files"
-            # 把本地 HEAD 推送到 PR 的源分支
-            git push origin HEAD:refs/heads/${{ github.head_ref }}
-          fi
+          git config user.name "github-actions[bot]" 
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add docs/**/*.md
+
+          git commit -m "chore: add createdDate to new markdown files" || echo "No changes to commit"
+
+      # 5. 把修改推送回当前 PR 分支
+      - name: Push changes
+        run: |
+          git push origin HEAD:${{ github.head_ref }}
+
