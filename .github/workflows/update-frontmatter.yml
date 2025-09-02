@@ -1,0 +1,36 @@
+name: Add Created Date
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  add-created-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 保证能拿到完整 git 历史
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Run script
+        run: |
+          python scripts/add_created_date_to_md.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: add createdDate to new markdown files"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
