@@ -22,16 +22,24 @@ def add_created_date(file_path, created_date):
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if "createdDate:" in content:
-        return  # 已经有了就不处理
+    # 文件以 frontmatter 开头
+    if content.lstrip().startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            frontmatter = parts[1]
+            body = parts[2]
 
-    if content.startswith("---"):
-        # 有 frontmatter，插入到第二行
-        lines = content.split("\n")
-        lines.insert(1, f"createdDate: {created_date}")
-        new_content = "\n".join(lines)
+            if "createdDate:" in frontmatter:
+                return  # frontmatter 已有 createdDate
+
+            # 在现有 frontmatter 最前面插入 createdDate
+            new_frontmatter = f"\ncreatedDate: {created_date}\n{frontmatter}"
+            new_content = f"---{new_frontmatter}---{body}"
+        else:
+            # 开头是 --- 但不完整，直接新建 frontmatter
+            new_content = f"---\ncreatedDate: {created_date}\n---\n\n{content}"
     else:
-        # 没有 frontmatter，新建一个
+        # 没有 frontmatter，直接新建
         new_content = f"---\ncreatedDate: {created_date}\n---\n\n{content}"
 
     with open(file_path, "w", encoding="utf-8") as f:
