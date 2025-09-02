@@ -32,5 +32,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: add createdDate to new markdown files"
-            git push origin HEAD:${{ github.head_ref }}
+            # 把本地 HEAD 推送到 PR 的源分支
+            git push origin HEAD:refs/heads/${{ github.head_ref }}
           fi
