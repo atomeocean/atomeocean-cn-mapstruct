@@ -22,6 +22,7 @@ import {
   NolebaseInlineLinkPreviewPlugin
 } from "@nolebase/vitepress-plugin-inline-link-preview/client";
 import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css';
+import ImageWrapper from "./components/ImageWrapper.vue";
 
 export default {
   ...DefaultTheme,
@@ -34,6 +35,7 @@ export default {
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
     app.component("LicenseNotice", LicenseNotice);
     app.component("GoogleAds", GoogleAds);
+    app.component("ImageWrapper", ImageWrapper);
     app.use(NolebaseGitChangelogPlugin)
 
     // 注册 ElementPlus
