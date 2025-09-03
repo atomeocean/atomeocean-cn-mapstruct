@@ -26,27 +26,23 @@ def get_commit_date():
 def ensure_created_date(content: str, created: str) -> str:
     """
     解析 front-matter，若没有 createdDate 字段则添加。
-    对于新增文件，即便 frontmatter 有 lastUpdated，也会添加 createdDate
     """
     print("调用 ensure_created_date() ...")
     fm_pattern = re.compile(r"^---\s*\n(.*?)\n---\s*\n?", re.S)
     match = fm_pattern.match(content)
 
     if match:
-        print("✅ 检测到 frontmatter")
+        print("检测到 frontmatter")
         frontmatter = match.group(1)
-
-        # 只检测 createdDate 是否存在
         if re.search(r"^createdDate:.*$", frontmatter, re.M):
-            print("⚠️ frontmatter 已存在 createdDate")
+            print("frontmatter 已存在 createdDate")
             return content
         else:
-            print("📝 frontmatter 中没有 createdDate，准备添加")
-            # 在 frontmatter 末尾添加 createdDate
+            print("frontmatter 中没有 createdDate，准备添加")
             new_fm = frontmatter.strip() + f"\ncreatedDate: {created}"
             return f"---\n{new_fm}\n---\n" + content[match.end():]
     else:
-        print("⚠️ 文件没有 frontmatter，新建一个frontmatter")
+        print("⚠️ 文件没有 frontmatter，新建一个")
         return f"---\ncreatedDate: {created}\n---\n\n{content}"
 
 def add_created_date(file_path, created_date):
@@ -82,7 +78,7 @@ def main():
 
     created_date = get_commit_date()
     for f in md_files:
-        print(f"正在处理 {f}")
+        print(f"🔧 正在处理 {f}")
         add_created_date(f, created_date)
     print("脚本执行结束")
 
