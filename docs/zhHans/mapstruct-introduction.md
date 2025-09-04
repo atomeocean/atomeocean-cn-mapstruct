@@ -4,8 +4,7 @@ title: MapStruct 介绍
 
 # 介绍
 
-  <Watermark>
-
+<Watermark>
 
 MapStruct 是一个用于生成类型安全的 bean 映射类的 Java 注解处理器。
 
@@ -22,4 +21,4 @@ Java 方法调用来进行源对象和目标对象之间的映射，即不使用
 如果映射不完整（不是所有目标属性都被映射）
 如果映射不正确（找不到适当的映射方法或类型转换）
 
-  </Watermark>
+</Watermark>
