@@ -1,7 +1,7 @@
 ---
 title: MapStruct 介绍
+lastUpdated: 2025-09-04
 ---
-
 # 介绍
 
 <Watermark>
