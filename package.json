@@ -2,6 +2,7 @@
   "type": "module",
   "devDependencies": {
     "@nolebase/markdown-it-bi-directional-links": "^2.18.2",
+    "@nolebase/markdown-it-unlazy-img": "^2.18.2",
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.0",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
     "husky": "^9.1.7",

@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, useAttrs } from 'vue';
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -17,6 +17,9 @@ const props = defineProps({
   },
 });
 
+// 用于透传其他属性（例如nolebase插件生成的 blurhash、loading 等）
+const attrs = useAttrs();
+
 // 加载自定义样式和默认样式
 const computedClass = computed(() => {
   return props.customClass ? `${props.customClass} default-image-class` : 'default-image-class';
@@ -24,7 +27,12 @@ const computedClass = computed(() => {
 </script>
 
 <template>
-  <img :src="src" :alt="alt" :class="computedClass" />
+  <img
+      v-bind="attrs"
+      :src="src"
+      :alt="alt"
+      :class="computedClass"
+  />
 </template>
 
 <style scoped>
