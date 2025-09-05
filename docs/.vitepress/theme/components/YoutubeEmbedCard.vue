@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="s">
   defineProps({
     videoUrl: {
       type: String,
