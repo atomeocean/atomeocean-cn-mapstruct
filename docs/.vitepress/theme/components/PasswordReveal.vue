@@ -19,7 +19,7 @@ const props = defineProps({
 
 const { frontmatter } = useData();
 
-const correctPassword = atomeoceanStaffPasswords[frontmatter.value.passwordKey] || props.correctPassword; // 正确的密码
+const correctPassword = props.correctPassword; // 正确的密码
 
 const userPassword = ref(""); // 用户输入的密码
 const showMessage = ref(false); // 控制是否显示信息
