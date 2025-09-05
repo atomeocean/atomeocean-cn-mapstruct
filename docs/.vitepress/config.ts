@@ -12,6 +12,7 @@ import {
   InlineLinkPreviewElementTransform
 } from "@nolebase/vitepress-plugin-inline-link-preview/markdown-it";
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
+import { UnlazyImages } from '@nolebase/markdown-it-unlazy-img'
 
 // 参考 https://vitepress.dev/reference/site-config
 const vitePressConfig: UserConfig = {
@@ -37,6 +38,14 @@ const vitePressConfig: UserConfig = {
     'zhHans/:rest*': ':rest*'
   },
   themeConfig,
+  vue: {
+    template: {
+      transformAssetUrls: {
+        // 让 VitePress 能正确处理 NolebaseUnlazyImg 标签中的 src 属性
+        NolebaseUnlazyImg: ['src'],
+      },
+    },
+  },
   markdown: {
     config: (md) => {
       md.use(InlineLinkPreviewElementTransform)
@@ -45,6 +54,10 @@ const vitePressConfig: UserConfig = {
         dir: 'docs/zhHans',
         baseDir: '/docs/zhHans',  // 设置根目录
       }));
+      // 添加图片懒加载插件支持
+      md.use(UnlazyImages(), {
+        imgElementTag: 'ImageWrapper',
+      })
     }
   },
   mermaid: {
