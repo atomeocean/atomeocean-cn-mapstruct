@@ -5,7 +5,7 @@
       required: true
     },
     // 可以自定义卡片标题
-    title: {
+    titl22e: {
       type: String,
       default: '在YouTube上观看'
     }
