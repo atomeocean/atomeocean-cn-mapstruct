@@ -1,4 +1,8 @@
-# atomeocean mapstruct documentation
+---
+lastUpdated: 2025-10-22
+---
+
+# Atomeocean mapstruct documentation
 
 <p align="center">
 English | <a href="README_zh.md">简体中文 </a>
