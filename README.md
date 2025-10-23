@@ -1,3 +1,7 @@
+---
+lastUpdated: 2025-10-22
+---
+
 # Atomeocean mapstruct documentation
 
 <p align="center">
