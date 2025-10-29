@@ -1,0 +1,30 @@
+name: Sync PR to Logbook
+
+# 触发条件：当pr被合并时执行
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  sync-logbook:
+    # 仅当pr被merge时执行
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检查出当前仓库代码
+      - name: Checkout mapstruct repository
+        uses: actions/checkout@v5
+
+      # 2. 获取本次pr数据并利用脚本进行解析为json格式
+      - name: Run parse pr data and set ENV
+        id: pr_data_step
+        run: |
+          PR_JSON=$(python scripts/utils/json_utils.py --pr '${{ toJson(github.event.pull_request) }}')
+          echo "PR_JSON=$PR_JSON" >> $GITHUB_ENV
+
+      # 3. 输出环境变量查看效果
+      - name: Show PR JSON
+        run: |
+          echo "PR JSON from environment variable:"
+          echo "$PR_JSON"
