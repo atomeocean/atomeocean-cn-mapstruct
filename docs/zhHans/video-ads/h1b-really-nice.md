@@ -1,6 +1,7 @@
 ---
 title: H1b真香
 comment: false
+lastUpdated: 2025-10-29
 ---
 # H1b视频
 
@@ -8,7 +9,6 @@ comment: false
 
 <YoutubeEmbedCard
 videoUrl="https://www.youtube.com/embed/G95sncEOsG8?si=hlNTXUNVaaw4y5I_" />
-
 
 ## I-797也能三折叠，欢迎订阅
 

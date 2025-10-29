@@ -16,12 +16,16 @@ jobs:
       - name: Checkout mapstruct repository
         uses: actions/checkout@v5
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
       # 2. 获取本次pr数据并利用脚本进行解析为json格式
-      - name: Run parse pr data and set ENV
-        id: pr_data_step
+      - name: Run Python script with PR data
         run: |
-          PR_JSON=$(python scripts/utils/json_utils.py --pr '${{ toJson(github.event.pull_request) }}')
-          echo "PR_JSON=$PR_JSON" >> $GITHUB_ENV
+          export PYTHONPATH="${PYTHONPATH}:${GITHUB_WORKSPACE}"
+          python scripts/utils/json_utils.py --pr '${{ toJson(github.event.pull_request) }}'
 
       # 3. 输出环境变量查看效果
       - name: Show PR JSON
