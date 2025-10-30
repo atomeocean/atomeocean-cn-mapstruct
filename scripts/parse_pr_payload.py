@@ -48,7 +48,7 @@ def main():
     pr_data = parse_pr_payload(pr_payload)
 
     # 将内容写入标准输出中
-    print(json.dumps(pr_data, indent=2))
+    print(json.dumps(pr_data, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
     main()
