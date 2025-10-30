@@ -26,10 +26,13 @@ def parse_pr_payload(payload):
     pr_data["id"] = payload["number"]
     pr_data["title"] = payload["title"]
     pr_data["author"] = payload["assignee"]["login"]
-    pr_data["reviewer"] = payload["requested_reviewers"][0]["login"]
     pr_data["createAt"] = payload["created_at"]
     pr_data["mergedAt"] = payload["merged_at"]
     pr_data["link"] = payload["html_url"]
+
+    # 审核员信息可能不存在，需要单独处理
+    reviewers = payload.get("requested_reviewers", [])
+    pr_data["reviewer"] = reviewers[0]["login"] if reviewers else ""
 
     return pr_data
 
@@ -37,20 +40,15 @@ def parse_pr_payload(payload):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--pr", required=True, help="PR data as JSON string")
-    parser.add_argument("--review", required=True, help="PR review data as JSON string")
     args = parser.parse_args()
 
     # 把 JSON 字符串解析成字典
     pr_payload = json.loads(args.pr)
-    review_payload = json.loads(args.review)
 
-    # 输出查看一下效果
-    print(review_payload)
-
-    # pr_data = parse_pr_payload(pr_payload)
+    pr_data = parse_pr_payload(pr_payload)
 
     # 将内容写入标准输出中
-    # print(json.dumps(pr_data, indent=2))
+    print(json.dumps(pr_data, indent=2))
 
 if __name__ == "__main__":
     main()
