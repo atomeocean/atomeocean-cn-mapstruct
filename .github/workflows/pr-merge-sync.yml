@@ -26,9 +26,3 @@ jobs:
         run: |
           export PYTHONPATH="${PYTHONPATH}:${GITHUB_WORKSPACE}"
           python scripts/utils/json_utils.py --pr '${{ toJson(github.event.pull_request) }}'
-
-      # 3. 输出环境变量查看效果
-      - name: Show PR JSON
-        run: |
-          echo "PR JSON from environment variable:"
-          echo "$PR_JSON"
