@@ -3,21 +3,30 @@ JSON工具类脚本，用于处理JSON格式数据
 """
 
 import json
-import argparse
+import logging
+from pathlib import Path
+from typing import Union, Optional, Any
+
 from scripts.utils.logging_utils import setup_logging
 
 setup_logging()
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--pr", required=True, help="PR data as JSON string")
-    args = parser.parse_args()
-
-    # 把 JSON 字符串解析成字典
-    pr_data = json.loads(args.pr)
-
-    # 将内容写入标准输出中
-    print(json.dumps(pr_data, indent=2))
-
-if __name__ == "__main__":
-    main()
+def read_json_file(
+        file_path: Union[str, Path]
+) -> Optional[Any]:
+    """
+    通用JSON文件读取函数
+    :param file_path: JSON文件路径
+    :return: JSON对象(dict) 或 JSON数组(list[dict])，出错返回None
+    """
+    setup_logging()
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        logging.error(f"Error: 文件未找到: {file_path}")
+    except json.JSONDecodeError:
+        logging.error(f"Error: JSON解析错误: {file_path}")
+    except Exception as e:
+        logging.error(f"Error: 读取JSON文件时出错: {e}")
+    return None
