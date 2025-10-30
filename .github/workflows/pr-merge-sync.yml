@@ -43,4 +43,6 @@ jobs:
           script: |
             echo "接收到的 PR JSON:"
             echo "$PR_JSON"
-            python3 ~/logbook/scripts/local-scripts/logbook/add_job_compass_pr_record.py "$PR_JSON"
+            cd ~/logbook
+            export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+            python3 scripts/local-scripts/logbook/add_job_compass_pr_record.py --pr_json "$PR_JSON"
