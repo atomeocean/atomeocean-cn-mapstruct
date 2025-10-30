@@ -25,4 +25,4 @@ jobs:
       - name: Run Python script with PR data
         run: |
           export PYTHONPATH="${PYTHONPATH}:${GITHUB_WORKSPACE}"
-          python scripts/parse_pr_payload.py --pr '${{ toJson(github.event.pull_request) }}'
+          python scripts/parse_pr_payload.py --pr '${{ toJson(github.event.pull_request) }}' --review '${{ toJson(github.event.pull_request_review) }}'
