@@ -40,6 +40,7 @@ jobs:
           username: atmBot
           key: ${{ secrets.ATM_BOT_SSH_KEY }}
           port: 22
+          envs: PR_JSON
           script: |
             echo "接收到的 PR JSON:"
             echo "$PR_JSON"
