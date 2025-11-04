@@ -37,9 +37,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.ATM_BOT_HOST }}
-          username: atmBot
+          username: ${{ secrets.ATM_BOT_USER }}
           key: ${{ secrets.ATM_BOT_SSH_KEY }}
-          port: 22
+          port: ${{ secrets.ATM_BOT_PORT }}
           envs: PR_JSON
           script: |
             echo "接收到的 PR JSON:"
