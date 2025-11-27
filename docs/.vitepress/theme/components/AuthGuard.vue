@@ -5,10 +5,13 @@ import { ref, onBeforeMount, computed } from "vue";
 import { ElMessage } from "element-plus";
 import { clearToken, getToken } from "../utils/tokenUtils.ts";
 
-const adminLoginUrl = "https://admin.atomeocean.com/sign-in"
+// TODO: Replace with your actual Spring Boot Backend URL
+const backendLoginUrl = "https://api.atomeocean.com/oauth2/authorization/github";
 const userRoleRequestUrl = "https://api-admin.atomeocean.com/admin/user-role/current-user";
+
 const userRoles = ref([])
 const hasAccess = ref(false)
+const isLoading = ref(true)
 const token = getToken()
 
 // 接收frontmatter中定义的参数
@@ -36,11 +39,12 @@ async function checkUserRole() {
 
     // 清理token cookie
     clearToken()
-    // 跳转至登录页
-    window.location.href = adminLoginUrl
-
     return []
   }
+}
+
+function login() {
+  window.location.href = backendLoginUrl;
 }
 
 onBeforeMount(async () => {
@@ -49,26 +53,82 @@ onBeforeMount(async () => {
     userRoles.value = await checkUserRole();
 
     // 进行角色匹配
-    hasAccess.value = userRoles.value.some((role) =>
-        requiredRoles.value.includes(role)
-    );
+    // 如果没有定义 requiredRoles，默认允许访问 (或者根据需求修改)
+    if (requiredRoles.value.length === 0) {
+        hasAccess.value = true;
+    } else {
+        hasAccess.value = userRoles.value.some((role) =>
+            requiredRoles.value.includes(role)
+        );
+    }
 
     // 如果没有指定权限，需要限制访问
     if(!hasAccess.value){
       ElMessage.error("无访问权限，请联系管理员")
     }
+  } else {
+    hasAccess.value = false;
   }
-  else {
-    // 如果token值为空，则将页面重定向至admin的登录页
-    window.location.href = adminLoginUrl
-  }
+  isLoading.value = false;
 })
 </script>
 
 <template>
-  <div v-if="hasAccess">
+  <div v-if="isLoading">
+    <!-- Loading State -->
+    <div class="auth-loading">
+      Loading...
+    </div>
+  </div>
+  <div v-else-if="hasAccess">
     <slot></slot>
+  </div>
+  <div v-else class="auth-login-container">
+    <div class="auth-card">
+      <h1>Login Required</h1>
+      <p>Please sign in with GitHub to access this content.</p>
+      <el-button type="primary" size="large" @click="login">
+        Sign in with GitHub
+      </el-button>
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.auth-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: var(--vp-c-text-2);
+}
+
+.auth-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.auth-card {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-card h1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.auth-card p {
+  margin-bottom: 2rem;
+  color: var(--vp-c-text-2);
+}
+</style>
