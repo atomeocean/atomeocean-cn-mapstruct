@@ -47,8 +47,10 @@ export default {
     }
   },
     Layout: () => {
-        return h(DefaultTheme.Layout, null, {
-            'doc-before': () => h(ContributorWrapper)
+        return h(AuthGuard, null, {
+            default: () => h(DefaultTheme.Layout, null, {
+                'doc-before': () => h(ContributorWrapper)
+            })
         })
     },
   setup() {
