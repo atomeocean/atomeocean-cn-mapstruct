@@ -4,7 +4,6 @@ import Watermark from "./components/Watermark.vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
-import AuthGuard from "./components/AuthGuard.vue";
 import PasswordReveal from "./components/PasswordReveal.vue";
 import YoutubeEmbedCard from "./components/YoutubeEmbedCard.vue";
 import ContactAtomeoceanAffix from "./components/ContactAtomeoceanAffix.vue";
@@ -23,13 +22,13 @@ import {
 } from "@nolebase/vitepress-plugin-inline-link-preview/client";
 import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css';
 import ImageWrapper from "./components/ImageWrapper.vue";
+import { createAuth, AuthStatus } from "./auth";
 
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
     // 注册全局组件
     app.component("Watermark", Watermark);
-    app.component("AuthGuard", AuthGuard);
     app.component("PasswordReveal", PasswordReveal);
     app.component("YoutubeEmbedCard", YoutubeEmbedCard);
     app.component("ContactAtomeoceanAffix", ContactAtomeoceanAffix);
@@ -40,6 +39,13 @@ export default {
 
     // 注册 ElementPlus
     app.use(ElementPlus);
+
+    // 注册 GitHub 登录：baseUrl 缺省取 VITE_API_BASE_URL，
+    // roles 是本站默认放行权限，逐页可用 frontmatter.requiredRoles 覆盖
+    app.use(createAuth({
+      roles: ["MEMBER"],
+    }))
+
     app.use(NolebaseInlineLinkPreviewPlugin)
     // 注册所有图标组件
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
@@ -47,10 +53,11 @@ export default {
     }
   },
     Layout: () => {
-        return h(AuthGuard, null, {
-            default: () => h(DefaultTheme.Layout, null, {
-                'doc-before': () => h(ContributorWrapper)
-            })
+        // AuthGuard 只在需要权限的文章里按需使用，不包住整站
+        return h(DefaultTheme.Layout, null, {
+            'doc-before': () => h(ContributorWrapper),
+            'nav-bar-content-after': () => h(AuthStatus),
+            'nav-screen-content-after': () => h(AuthStatus)
         })
     },
   setup() {
