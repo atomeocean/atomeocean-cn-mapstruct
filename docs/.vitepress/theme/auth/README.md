@@ -1,3 +1,7 @@
+---
+createdDate: 2026-09-17
+lastUpdated: 2026-09-17
+---
 # GitHub 登录模块（跨仓库复制件）
 
 版本 **1.0.0**（见 `index.ts` 里的 `AUTH_MODULE_VERSION`）
